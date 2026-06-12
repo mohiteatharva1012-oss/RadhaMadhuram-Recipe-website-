@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RadhaMadhuram - Pure, heavenly Indian recipe collection of Sweets, Breakfast, Lunch, and Dinner. Featuring the Sanskrit motto: अन्नं हि पूर्णब्रह्म.">
+  <title>RadhaMadhuram - Traditional Indian Recipe Collection</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Hidden Radio Inputs for Pure CSS Category Tabs -->
+  <input type="radio" id="radio-all" name="recipe-tabs" checked>
+  <input type="radio" id="radio-sweets" name="recipe-tabs">
+  <input type="radio" id="radio-breakfast" name="recipe-tabs">
+  <input type="radio" id="radio-lunch" name="recipe-tabs">
+  <input type="radio" id="radio-dinner" name="recipe-tabs">
+
+  <!-- Navigation Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo-area">
+        <img class="logo-img" src="assets/logo.png" alt="RadhaMadhuram Logo">
+        <div class="brand-info">
+          <span class="logo-text">RadhaMadhuram</span>
+          <span class="sanskrit-motto">अन्नं हि पूर्णब्रह्म</span>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <!-- Search bar -->
+        <div class="search-wrapper">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search recipes..." oninput="filterRecipes()">
+        </div>
+        <!-- Light/Dark Theme toggle -->
+        <button id="themeToggle" class="theme-toggle-btn" title="Toggle Light/Dark Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <!-- User Profile Dropdown Area -->
+        <div class="profile-wrapper">
+          <div class="profile-avatar">M</div>
+          <div class="profile-dropdown">
+            <div class="dropdown-user-info">
+              <span class="user-name">Atharva Mohite</span>
+              <span class="user-role">Chef Administrator</span>
+            </div>
+            <a href="#" class="dropdown-item"><i class="fa-solid fa-circle-user"></i> My Account</a>
+            <a href="#" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Saved Recipes</a>
+            <a href="#" class="dropdown-item"><i class="fa-solid fa-gear"></i> Settings</a>
+            <a href="#" class="dropdown-item" style="color: var(--accent-rose);"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <span class="hero-subtitle">Pure Culinary Devotion</span>
+    <h1 class="hero-title">RadhaMadhuram</h1>
+    <div class="hero-sanskrit-banner">अन्नं हि पूर्णब्रह्म | Annam Hi Purna Brahma</div>
+    <p class="hero-desc">"Food is indeed the Supreme Truth." Explore our collection of premium, handcrafted traditional Indian recipes spanning sweets, breakfasts, lunches, and dinners, prepared with love and purity.</p>
+    
+    <!-- Category Filter Tabs using Labels -->
+    <div class="filter-tabs">
+      <label for="radio-all" class="filter-btn">All Dishes</label>
+      <label for="radio-sweets" class="filter-btn">Sweets</label>
+      <label for="radio-breakfast" class="filter-btn">Breakfast</label>
+      <label for="radio-lunch" class="filter-btn">Lunch</label>
+      <label for="radio-dinner" class="filter-btn">Dinner</label>
+    </div>
+  </section>
+
+  <!-- Recipe Grid Section -->
+  <main class="recipe-grid-section">
+    <div class="recipe-grid">
+
+      <!-- ==================== SWEETS (4) ==================== -->
+      
+      <!-- Recipe 1: Kesar Pista Shrikhand -->
+      <article class="recipe-card" data-category="sweets">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/kesar_shrikhand.png" alt="Kesar Pista Shrikhand" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Sweets</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 15 mins (+4h rest)</span>
+            <span><i class="fa-solid fa-utensils"></i> 4 servings</span>
+          </div>
+          <h3 class="card-title">Kesar Pista Shrikhand</h3>
+          <p class="card-desc">A rich, velvety traditional yogurt dessert infused with saffron, cardamom, and a crunch of pistachios.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill easy">easy</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('shrikhand', 'Kesar Pista Shrikhand')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-shrikhand" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Recipe 2: Malpua with Rabdi -->
+      <article class="recipe-card" data-category="sweets">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/malpua_rabdi.png" alt="Malpua with Rabdi" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Sweets</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 50 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 6 servings</span>
+          </div>
+          <h3 class="card-title">Malpua with Rabdi</h3>
+          <p class="card-desc">Golden fried sweet pancakes soaked in saffron sugar syrup and served with creamy thickened rabdi.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill hard">hard</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('malpua', 'Malpua with Rabdi')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-malpua" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Recipe 3: Gajar Ka Halwa -->
+      <article class="recipe-card" data-category="sweets">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/gajar_halwa.png" alt="Gajar Ka Halwa" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Sweets</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 60 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 6 servings</span>
+          </div>
+          <h3 class="card-title">Gajar Ka Halwa</h3>
+          <p class="card-desc">A slow-cooked, rich dessert made from grated red carrots, full-fat milk, ghee, khoya, and crunchy roasted nuts.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill medium">medium</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('gajar', 'Gajar Ka Halwa')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-gajar" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Recipe 4: Gulab Jamun -->
+      <article class="recipe-card" data-category="sweets">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/gulab_jamun.png" alt="Gulab Jamun" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Sweets</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 40 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 6 servings</span>
+          </div>
+          <h3 class="card-title">Gulab Jamun</h3>
+          <p class="card-desc">Berry-sized golden balls made of milk solids, deep-fried to perfection and soaked in a warm rose-cardamom syrup.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill medium">medium</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('gulab', 'Gulab Jamun')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-gulab" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- ==================== BREAKFAST (4) ==================== -->
+      
+      <!-- Recipe 5: Masala Dosa -->
+      <article class="recipe-card" data-category="breakfast">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/masala_dosa.png" alt="Masala Dosa" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Breakfast</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 45 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 4 servings</span>
+          </div>
+          <h3 class="card-title">Classic Masala Dosa</h3>
+          <p class="card-desc">Crispy fermented rice and lentil crepe stuffed with aromatic potato masala, served with sambar and fresh chutney.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill hard">hard</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('dosa', 'Classic Masala Dosa')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-dosa" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Recipe 6: Aloo Paratha -->
+      <article class="recipe-card" data-category="breakfast">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/aloo_paratha.png" alt="Aloo Paratha" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Breakfast</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 30 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 4 servings</span>
+          </div>
+          <h3 class="card-title">Ghee Aloo Paratha</h3>
+          <p class="card-desc">Golden wheat flatbread stuffed with spiced, mashed potatoes, roasted with ghee, and topped with fresh butter.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill medium">medium</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('paratha', 'Ghee Aloo Paratha')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-paratha" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Recipe 7: Idli Sambar -->
+      <article class="recipe-card" data-category="breakfast">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/idli_sambar.png" alt="Idli Sambar" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Breakfast</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 30 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 4 servings</span>
+          </div>
+          <h3 class="card-title">Soft Steamed Idli</h3>
+          <p class="card-desc">Spongy, pillowy steamed rice cakes served hot with a tangy vegetable lentil stew (sambar) and coconut dip.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill easy">easy</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('idli', 'Soft Steamed Idli')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-idli" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Recipe 8: Kanda Poha -->
+      <article class="recipe-card" data-category="breakfast">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/poha.png" alt="Kanda Poha" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Breakfast</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 20 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 4 servings</span>
+          </div>
+          <h3 class="card-title">Indori Kanda Poha</h3>
+          <p class="card-desc">Fluffy flattened rice flakes sautéed with turmeric, mustard seeds, green chilies, peanuts, onions, and fresh lemon.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill easy">easy</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('poha', 'Indori Kanda Poha')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-poha" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- ==================== LUNCH (4) ==================== -->
+      
+      <!-- Recipe 9: Paneer Butter Masala -->
+      <article class="recipe-card" data-category="lunch">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/paneer_masala.png" alt="Paneer Butter Masala" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Lunch</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 35 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 4 servings</span>
+          </div>
+          <h3 class="card-title">Paneer Butter Masala</h3>
+          <p class="card-desc">Succulent cottage cheese cubes in a rich, buttery, creamy tomato-cashew gravy served with clay-oven Naan.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill medium">medium</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('paneer', 'Paneer Butter Masala')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-paneer" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Recipe 10: Dal Makhani with Jeera Rice -->
+      <article class="recipe-card" data-category="lunch">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/dal_makhani.png" alt="Dal Makhani" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Lunch</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 50 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 5 servings</span>
+          </div>
+          <h3 class="card-title">Dal Makhani & Rice</h3>
+          <p class="card-desc">Creamy, slow-cooked black lentils in a buttery gravy, served alongside aromatic long-grain cumin Jeera Rice.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill medium">medium</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('dal', 'Dal Makhani & Rice')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-dal" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Recipe 11: Punjabi Chole Bhature -->
+      <article class="recipe-card" data-category="lunch">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/chole_bhature.png" alt="Chole Bhature" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Lunch</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 45 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 4 servings</span>
+          </div>
+          <h3 class="card-title">Punjabi Chole Bhature</h3>
+          <p class="card-desc">Rich, dark, spiced chickpea curry (Chole) paired with fluffy, puffed golden-fried leavened bread (Bhature).</p>
+          <div class="card-footer">
+            <span class="difficulty-pill hard">hard</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('chole', 'Punjabi Chole Bhature')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-chole" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Recipe 12: Vegetable Biryani -->
+      <article class="recipe-card" data-category="lunch">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/veg_biryani.png" alt="Vegetable Biryani" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Lunch</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 55 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 6 servings</span>
+          </div>
+          <h3 class="card-title">Shahi Vegetable Biryani</h3>
+          <p class="card-desc">Aromatic long-grain basmati rice layered with mixed vegetables, saffron, mint, and crisp fried onions in a clay handi.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill hard">hard</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('biryani', 'Shahi Vegetable Biryani')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-biryani" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- ==================== DINNER (4) ==================== -->
+      
+      <!-- Recipe 13: Palak Paneer -->
+      <article class="recipe-card" data-category="dinner">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/palak_paneer.png" alt="Palak Paneer" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Dinner</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 30 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 4 servings</span>
+          </div>
+          <h3 class="card-title">Lasooni Palak Paneer</h3>
+          <p class="card-desc">Cubes of fresh paneer in a silky, garlic-tempered, vibrant spinach gravy paired with warm wheat Tandoori Rotis.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill easy">easy</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('palak', 'Lasooni Palak Paneer')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-palak" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Recipe 14: Baingan Bharta -->
+      <article class="recipe-card" data-category="dinner">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/baingan_bharta.png" alt="Baingan Bharta" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Dinner</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 40 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 4 servings</span>
+          </div>
+          <h3 class="card-title">Baingan Bharta & Bajra</h3>
+          <p class="card-desc">Smoky fire-roasted mashed eggplant cooked with peas and traditional spices, served with healthy hot Bajra Roti.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill medium">medium</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('baingan', 'Baingan Bharta & Bajra')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-baingan" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Recipe 15: Kadai Mushroom -->
+      <article class="recipe-card" data-category="dinner">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/kadai_mushroom.png" alt="Kadai Mushroom" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Dinner</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 35 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 4 servings</span>
+          </div>
+          <h3 class="card-title">Spicy Kadai Mushroom</h3>
+          <p class="card-desc">Fresh mushrooms and bell peppers tossed in a semi-dry, freshly ground kadai spice curry, paired with flaky layered Paratha.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill medium">medium</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('mushroom', 'Spicy Kadai Mushroom')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-mushroom" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Recipe 16: Moong Dal Khichdi -->
+      <article class="recipe-card" data-category="dinner">
+        <div class="card-img-wrapper">
+          <img class="card-img" src="assets/khichdi_kadhi.png" alt="Moong Dal Khichdi" loading="lazy">
+          <div class="card-overlay">
+            <span class="recipe-badge">Dinner</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="recipe-meta">
+            <span><i class="fa-regular fa-clock"></i> 25 mins</span>
+            <span><i class="fa-solid fa-utensils"></i> 3 servings</span>
+          </div>
+          <h3 class="card-title">Moong Dal Khichdi</h3>
+          <p class="card-desc">Ultimate Indian comfort meal. Mildly spiced rice and split moong dal porridge topped with ghee, served with tangy Kadhi.</p>
+          <div class="card-footer">
+            <span class="difficulty-pill easy">easy</span>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="share-card-btn" onclick="shareRecipe('khichdi', 'Moong Dal Khichdi')" title="Share Recipe"><i class="fa-solid fa-share-nodes"></i></button>
+              <a href="#modal-khichdi" class="view-recipe-btn">View Recipe <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+
+  <!-- ==================== PURE CSS MODALS (:TARGET SELECTORS) ==================== -->
+
+  <!-- Modal 1: Shrikhand -->
+  <div id="modal-shrikhand" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/kesar_shrikhand.png" alt="Kesar Pista Shrikhand">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Sweets</span>
+          <h2 class="modal-title">Kesar Pista Shrikhand</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">15 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">0 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">15 mins (+4h rest)</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">4 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('shrikhand', 'Kesar Pista Shrikhand')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="shri-i1" class="ingredient-checkbox"><label for="shri-i1" class="ingredient-text">4 cups Fresh full-fat curd</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="shri-i2" class="ingredient-checkbox"><label for="shri-i2" class="ingredient-text">1/2 cup Powdered sugar</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="shri-i3" class="ingredient-checkbox"><label for="shri-i3" class="ingredient-text">12 Saffron strands (soaked in milk)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="shri-i4" class="ingredient-checkbox"><label for="shri-i4" class="ingredient-text">1/4 tsp Cardamom powder</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="shri-i5" class="ingredient-checkbox"><label for="shri-i5" class="ingredient-text">1 tbsp Chopped pistachios</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="shri-i6" class="ingredient-checkbox"><label for="shri-i6" class="ingredient-text">1 tbsp Almond slivers</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Line a deep bowl with a clean muslin cheesecloth and pour yogurt in it.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Tie the cloth and hang it for 4 hours to drain all the excess liquid (whey), obtaining thick hung curd (Chakka).</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">Transfer hung curd into a mixing bowl, add powdered sugar and saffron milk infusion.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Whisk vigorously until completely smooth, glossy, and lump-free.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Stir in cardamom powder and half of the pistachios and almonds.</p></div>
+              <div class="step-card"><span class="step-number">6</span><p class="step-desc">Serve in bowls topped with remaining nuts and saffron strands. Chill before offering.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Malpua -->
+  <div id="modal-malpua" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/malpua_rabdi.png" alt="Malpua with Rabdi">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Sweets</span>
+          <h2 class="modal-title">Malpua with Rabdi</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">20 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">30 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">50 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">6 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('malpua', 'Malpua with Rabdi')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="mal-i1" class="ingredient-checkbox"><label for="mal-i1" class="ingredient-text">1 cup Flour (Maida) & 1/2 cup Suji</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="mal-i2" class="ingredient-checkbox"><label for="mal-i2" class="ingredient-text">1/2 cup Rabdi & 1 cup Milk (batter)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="mal-i3" class="ingredient-checkbox"><label for="mal-i3" class="ingredient-text">1 tsp Crushed fennel seeds</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="mal-i4" class="ingredient-checkbox"><label for="mal-i4" class="ingredient-text">1 cup Ghee (deep frying)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="mal-i5" class="ingredient-checkbox"><label for="mal-i5" class="ingredient-text">1 cup Sugar & 1/2 cup Water (syrup)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="mal-i6" class="ingredient-checkbox"><label for="mal-i6" class="ingredient-text">2 cups Thick Rabdi (serving)</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Boil sugar, water, saffron, and cardamom to make a sticky 1-thread syrup. Keep warm.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Mix flour, semolina, fennel seeds, milk, and 1/2 cup rabdi to make a smooth pouring batter. Rest for 30 minutes.</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">Heat shallow ghee in a flat pan. Pour a small ladle of batter in the center to form a pancake.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Fry on medium-low heat until golden-brown on both sides, then drain excess ghee.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Immediately soak hot malpuas in sugar syrup for 2-3 minutes, then remove.</p></div>
+              <div class="step-card"><span class="step-number">6</span><p class="step-desc">Serve drizzled with rich thick rabdi and garnished with sliced pistachios.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Gajar Halwa -->
+  <div id="modal-gajar" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/gajar_halwa.png" alt="Gajar Ka Halwa">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Sweets</span>
+          <h2 class="modal-title">Gajar Ka Halwa</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">20 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">40 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">60 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">6 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('gajar', 'Gajar Ka Halwa')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="gaj-i1" class="ingredient-checkbox"><label for="gaj-i1" class="ingredient-text">1 kg Carrots (washed and grated)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="gaj-i2" class="ingredient-checkbox"><label for="gaj-i2" class="ingredient-text">4 cups Full-fat milk</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="gaj-i3" class="ingredient-checkbox"><label for="gaj-i3" class="ingredient-text">4 tbsp Ghee</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="gaj-i4" class="ingredient-checkbox"><label for="gaj-i4" class="ingredient-text">1 cup Sugar</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="gaj-i5" class="ingredient-checkbox"><label for="gaj-i5" class="ingredient-text">3/4 cup Crumbled khoya</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="gaj-i6" class="ingredient-checkbox"><label for="gaj-i6" class="ingredient-text">1/2 tsp Cardamom powder & chopped nuts</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Heat 2 tbsp ghee in a heavy kadhai, sauté grated carrots for 10 minutes until soft.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Pour in milk, mix well, and simmer on medium heat until milk evaporates completely (35 mins).</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">Add sugar and remaining ghee, stirring continuously until the halwa becomes glossy.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Fold in crumbled khoya (mawa) and cardamom powder, cooking for 5 more minutes.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Garnish with cashews and almonds fried in a little ghee. Serve warm.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Gulab Jamun -->
+  <div id="modal-gulab" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/gulab_jamun.png" alt="Gulab Jamun">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Sweets</span>
+          <h2 class="modal-title">Gulab Jamun</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">20 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">20 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">40 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">6 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('gulab', 'Gulab Jamun')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="gul-i1" class="ingredient-checkbox"><label for="gul-i1" class="ingredient-text">1 cup Khoya (mawa)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="gul-i2" class="ingredient-checkbox"><label for="gul-i2" class="ingredient-text">1/4 cup Grated paneer</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="gul-i3" class="ingredient-checkbox"><label for="gul-i3" class="ingredient-text">3 tbsp Flour & 1/4 tsp baking powder</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="gul-i4" class="ingredient-checkbox"><label for="gul-i4" class="ingredient-text">2 tbsp Warm milk (to bind)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="gul-i5" class="ingredient-checkbox"><label for="gul-i5" class="ingredient-text">2 cups Sugar & 2 cups Water (syrup)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="gul-i6" class="ingredient-checkbox"><label for="gul-i6" class="ingredient-text">Ghee for deep frying</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Boil sugar, water, and cardamom to form syrup. Add rose water and keep warm.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Mash khoya and paneer together with your palm until smooth. Add flour, baking powder, and bind with milk to form a soft dough.</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">Shape into small smooth balls with no cracks on the surface.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Heat ghee in a wok on low heat. Deep fry the balls slowly, rotating them gently until dark golden brown.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Drain ghee, transfer immediately to hot sugar syrup, and let soak for 2 hours before serving.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Masala Dosa -->
+  <div id="modal-dosa" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/masala_dosa.png" alt="Masala Dosa">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Breakfast</span>
+          <h2 class="modal-title">Classic Masala Dosa</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">15 mins (+ferment)</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">30 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">45 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">4 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('dosa', 'Classic Masala Dosa')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="dos-i1" class="ingredient-checkbox"><label for="dos-i1" class="ingredient-text">3 cups Dosa Batter (fermented)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="dos-i2" class="ingredient-checkbox"><label for="dos-i2" class="ingredient-text">4 Potatoes (boiled and mashed)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="dos-i3" class="ingredient-checkbox"><label for="dos-i3" class="ingredient-text">1 Onion (sliced) & 2 green chilies</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="dos-i4" class="ingredient-checkbox"><label for="dos-i4" class="ingredient-text">1/2 tsp Mustard seeds & turmeric</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="dos-i5" class="ingredient-checkbox"><label for="dos-i5" class="ingredient-text">Curry leaves & chopped ginger</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="dos-i6" class="ingredient-checkbox"><label for="dos-i6" class="ingredient-text">Ghee/oil for roasting dosa</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Prepare Potato Masala: Sauté mustard seeds, curry leaves, onions, green chili, ginger, and turmeric in oil. Fold in boiled mashed potatoes, salt, and water. Cook for 5 minutes. Set aside.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Heat a flat cast iron skillet (tawa), splash water to cool it, and wipe clean.</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">Pour a ladle of batter in the center, spread in a circular spiral motion outward to make a thin crepe.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Drizzle ghee around the edges and cook on medium-high until the base turns golden and crispy.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Place a portion of potato masala in the center, fold the dosa over it, and serve hot with sambar and coconut chutney.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: Aloo Paratha -->
+  <div id="modal-paratha" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/aloo_paratha.png" alt="Aloo Paratha">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Breakfast</span>
+          <h2 class="modal-title">Ghee Aloo Paratha</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">15 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">15 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">30 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">4 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('paratha', 'Ghee Aloo Paratha')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="par-i1" class="ingredient-checkbox"><label for="par-i1" class="ingredient-text">2 cups Whole wheat flour (atta)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="par-i2" class="ingredient-checkbox"><label for="par-i2" class="ingredient-text">3 Potatoes (boiled & mashed)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="par-i3" class="ingredient-checkbox"><label for="par-i3" class="ingredient-text">1 tsp Ginger-green chili paste</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="par-i4" class="ingredient-checkbox"><label for="par-i4" class="ingredient-text">1/2 tsp Ajwain, red chili powder, & salt</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="par-i5" class="ingredient-checkbox"><label for="par-i5" class="ingredient-text">1/2 tsp Garam masala & coriander leaves</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="par-i6" class="ingredient-checkbox"><label for="par-i6" class="ingredient-text">Ghee or oil for roasting</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Knead wheat flour with water and a pinch of salt to form a soft dough. Rest for 15 mins.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Mix mashed potatoes, ginger-chili paste, ajwain, garam masala, chili powder, coriander, and salt together to make the stuffing.</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">Roll a small ball of dough into a 4-inch circle, place a spoonful of stuffing in the center, gather edges to seal, and roll back into a ball.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Gently roll the stuffed dough ball into a flatbread, taking care that the filling does not tear out.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Cook on a hot tawa. Flip when bubbles appear, spread ghee on both sides, and press with a spatula until golden-brown spots appear.</p></div>
+              <div class="step-card"><span class="step-number">6</span><p class="step-desc">Serve hot with white butter, fresh curd, and pickles.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7: Idli Sambar -->
+  <div id="modal-idli" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/idli_sambar.png" alt="Idli Sambar">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Breakfast</span>
+          <h2 class="modal-title">Soft Steamed Idli</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">10 mins (+ferment)</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">20 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">30 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">4 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('idli', 'Soft Steamed Idli')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="idl-i1" class="ingredient-checkbox"><label for="idl-i1" class="ingredient-text">3 cups Fermented Idli Batter</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="idl-i2" class="ingredient-checkbox"><label for="idl-i2" class="ingredient-text">1 cup Toor dal (boiled, for Sambar)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="idl-i3" class="ingredient-checkbox"><label for="idl-i3" class="ingredient-text">1 cup Chopped mixed vegetables</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="idl-i4" class="ingredient-checkbox"><label for="idl-i4" class="ingredient-text">2 tbsp Sambar powder & tamarind pulp</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="idl-i5" class="ingredient-checkbox"><label for="idl-i5" class="ingredient-text">1/2 tsp Mustard seeds & curry leaves</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="idl-i6" class="ingredient-checkbox"><label for="idl-i6" class="ingredient-text">Grated coconut (for chutney)</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Grease idli molds with oil, fill with ladlefuls of fermented rice-urad batter.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Steam in an idli steamer on high heat for 10-12 minutes until soft and cooked. Cool and demold.</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">Sambar: Boil veggies in tamarind water. Add boiled dal, sambar powder, and salt. Cook for 10 mins.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Sambar Tempering: Crackle mustard seeds, curry leaves, and asafoetida in ghee, pour into hot sambar.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Serve piping hot soft idlis dipped in sambar with a side of white coconut chutney.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8: Kanda Poha -->
+  <div id="modal-poha" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/poha.png" alt="Kanda Poha">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Breakfast</span>
+          <h2 class="modal-title">Indori Kanda Poha</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">10 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">10 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">20 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">4 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('poha', 'Indori Kanda Poha')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="poh-i1" class="ingredient-checkbox"><label for="poh-i1" class="ingredient-text">2 cups Thick beaten rice (Poha)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="poh-i2" class="ingredient-checkbox"><label for="poh-i2" class="ingredient-text">1 Onion (finely chopped) & green chili</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="poh-i3" class="ingredient-checkbox"><label for="poh-i3" class="ingredient-text">1/4 cup Peanuts (roasted)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="poh-i4" class="ingredient-checkbox"><label for="poh-i4" class="ingredient-text">1/2 tsp Mustard seeds & turmeric powder</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="poh-i5" class="ingredient-checkbox"><label for="poh-i5" class="ingredient-text">1/2 lemon, coriander, & sugar (pinch)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="poh-i6" class="ingredient-checkbox"><label for="poh-i6" class="ingredient-text">Golden Sev & pomegranate (for garnish)</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Wash the Poha in a colander until soft. Sprinkle salt, sugar, and turmeric powder over it. Toss lightly and drain completely.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Heat 1 tbsp oil, fry peanuts until crunchy, and set aside.</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">In the same oil, add mustard seeds and green chili. Add chopped onions and sauté until translucent.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Add poha and peanuts, mix gently, cover and steam on very low heat for 3-4 minutes.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Remove lid, add lemon juice and coriander. Garnish with sev and pomegranate seeds before serving.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9: Paneer Butter Masala -->
+  <div id="modal-paneer" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/paneer_masala.png" alt="Paneer Butter Masala">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Lunch</span>
+          <h2 class="modal-title">Paneer Butter Masala</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">15 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">20 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">35 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">4 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('paneer', 'Paneer Butter Masala')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="panb-i1" class="ingredient-checkbox"><label for="panb-i1" class="ingredient-text">250g Paneer (cubed)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="panb-i2" class="ingredient-checkbox"><label for="panb-i2" class="ingredient-text">3 Tomatoes & 10 Cashew nuts (pureed)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="panb-i3" class="ingredient-checkbox"><label for="panb-i3" class="ingredient-text">2 tbsp Butter & 1 tbsp oil</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="panb-i4" class="ingredient-checkbox"><label for="panb-i4" class="ingredient-text">1 tsp Ginger-garlic paste</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="panb-i5" class="ingredient-checkbox"><label for="panb-i5" class="ingredient-text">1/2 tsp Chili, turmeric, garam masala</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="panb-i6" class="ingredient-checkbox"><label for="panb-i6" class="ingredient-text">2 tbsp Cream & Kasuri methi (garnish)</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Heat 1 tbsp butter and oil, sauté ginger-garlic paste and spices for a minute.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Add tomato-cashew puree and cook on medium flame until oil starts leaving the sides (10 mins).</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">Pour in 1 cup warm water, mix well, and simmer to a thick gravy.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Add paneer cubes, remaining butter, salt, and simmer for 3 minutes on low heat.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Finish with crushed kasuri methi, garam masala, and fresh cream. Serve with butter naan.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10: Dal Makhani -->
+  <div id="modal-dal" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/dal_makhani.png" alt="Dal Makhani">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Lunch</span>
+          <h2 class="modal-title">Dal Makhani & Jeera Rice</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">15 mins (+8h soak)</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">35 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">50 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">5 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('dal', 'Dal Makhani & Rice')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="dalm-i1" class="ingredient-checkbox"><label for="dalm-i1" class="ingredient-text">1 cup Whole black Urad dal & 1/4 cup kidney beans</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="dalm-i2" class="ingredient-checkbox"><label for="dalm-i2" class="ingredient-text">3 tbsp Butter & 2 tbsp fresh cream</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="dalm-i3" class="ingredient-checkbox"><label for="dalm-i3" class="ingredient-text">1/2 cup Tomato puree & Ginger-garlic paste</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="dalm-i4" class="ingredient-checkbox"><label for="dalm-i4" class="ingredient-text">Chili powder, garam masala, salt</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="dalm-i5" class="ingredient-checkbox"><label for="dalm-i5" class="ingredient-text">1.5 cups Basmati rice (for Jeera Rice)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="dalm-i6" class="ingredient-checkbox"><label for="dalm-i6" class="ingredient-text">1 tsp Cumin seeds & ghee (rice tempering)</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Pressure cook soaked dal and kidney beans with salt and water for 5-6 whistles until soft.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Sauté ginger-garlic paste, red chili, and tomato puree in butter. Cook until fat separates.</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">Add cooked dal, mash slightly with ladle, and simmer on low heat for 25 minutes to develop creamy richness.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Jeera Rice: Sauté cumin seeds in ghee. Add washed basmati rice, water, and salt. Cook until grains are separate and fluffy.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Stir cream and remaining butter into dal. Serve piping hot with jeera rice.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 11: Chole Bhature -->
+  <div id="modal-chole" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/chole_bhature.png" alt="Chole Bhature">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Lunch</span>
+          <h2 class="modal-title">Punjabi Chole Bhature</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">20 mins (+8h soak)</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">25 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">45 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">4 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('chole', 'Punjabi Chole Bhature')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="cho-i1" class="ingredient-checkbox"><label for="cho-i1" class="ingredient-text">2 cups Chickpeas (Kabuli Chana, boiled)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="cho-i2" class="ingredient-checkbox"><label for="cho-i2" class="ingredient-text">1 cup Tomato-onion paste & ginger juliennes</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="cho-i3" class="ingredient-checkbox"><label for="cho-i3" class="ingredient-text">2 tbsp Chole masala powder</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="cho-i4" class="ingredient-checkbox"><label for="cho-i4" class="ingredient-text">1 tea bag (boiled with chana for dark color)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="cho-i5" class="ingredient-checkbox"><label for="cho-i5" class="ingredient-text">2 cups All-purpose flour & 1/2 cup curd (for Bhature)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="cho-i6" class="ingredient-checkbox"><label for="cho-i6" class="ingredient-text">Oil for deep frying</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Chole: Pressure cook soaked chickpeas with tea bag and salt. Strain tea bag.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Gravy: Cook onion-tomato paste in oil. Add ginger, chole masala, chili, and salt. Sauté until oil oozes.</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">Stir in chickpeas and a cup of cooking liquid. Simmer for 15 minutes until curry is thick and dark.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Bhature: Knead flour, curd, baking powder, and water. Rest for 2 hours. Roll into large ovals.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Deep fry in smoking hot oil, pressing down gently until puffed and crispy golden. Serve hot with chole.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 12: Vegetable Biryani -->
+  <div id="modal-biryani" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/veg_biryani.png" alt="Vegetable Biryani">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Lunch</span>
+          <h2 class="modal-title">Shahi Vegetable Biryani</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">20 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">35 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">55 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">6 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('biryani', 'Shahi Vegetable Biryani')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="bir-i1" class="ingredient-checkbox"><label for="bir-i1" class="ingredient-text">2 cups Basmati Rice (aged, half-cooked)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="bir-i2" class="ingredient-checkbox"><label for="bir-i2" class="ingredient-text">2 cups Mixed chopped veggies & 1/2 cup curd</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="bir-i3" class="ingredient-checkbox"><label for="bir-i3" class="ingredient-text">3 tbsp Biryani masala powder</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="bir-i4" class="ingredient-checkbox"><label for="bir-i4" class="ingredient-text">Saffron dissolved in 2 tbsp warm milk</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="bir-i5" class="ingredient-checkbox"><label for="bir-i5" class="ingredient-text">1/2 cup Fried onion juliennes (birista)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="bir-i6" class="ingredient-checkbox"><label for="bir-i6" class="ingredient-text">Ghee, mint leaves, and roasted cashews</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Sauté vegetables with biryani masala, curd, mint, and salt in ghee until 80% cooked.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">In a heavy-bottomed pot (handi), layer half the cooked vegetables, top with half the boiled basmati rice.</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">Repeat layering. Drizzle saffron milk, ghee, mint, fried onions, and roasted cashews on top.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Seal the pot edges with wheat dough and place lid tightly. Cook on very low heat (dum) for 15-20 minutes.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Fluff gently and serve aromatic biryani hot with yogurt raita.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 13: Palak Paneer -->
+  <div id="modal-palak" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/palak_paneer.png" alt="Palak Paneer">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Dinner</span>
+          <h2 class="modal-title">Lasooni Palak Paneer</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">15 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">15 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">30 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">4 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('palak', 'Lasooni Palak Paneer')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="pal-i1" class="ingredient-checkbox"><label for="pal-i1" class="ingredient-text">250g Paneer (cubed)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="pal-i2" class="ingredient-checkbox"><label for="pal-i2" class="ingredient-text">1 bunch Fresh spinach (blanched & pureed)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="pal-i3" class="ingredient-checkbox"><label for="pal-i3" class="ingredient-text">5 Cloves garlic (finely minced)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="pal-i4" class="ingredient-checkbox"><label for="pal-i4" class="ingredient-text">1 Onion (chopped) & green chili</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="pal-i5" class="ingredient-checkbox"><label for="pal-i5" class="ingredient-text">1/2 tsp Cumin seeds, cream, & butter</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="pal-i6" class="ingredient-checkbox"><label for="pal-i6" class="ingredient-text">Wheat flour (for Tandoori Roti)</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Blanch spinach in boiling water for 2 minutes, plunge in ice water to lock green color, and blend to a smooth puree with green chili.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Heat butter and oil. Crackle cumin, then sauté chopped onion and half of the minced garlic until golden.</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">Pour in spinach puree, add salt, and cook for 5 minutes. Fold in paneer cubes gently.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Prepare tempering: Sauté remaining minced garlic and a dried red chili in ghee. Pour hot over the curry.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Garnish with a swirl of fresh cream. Serve with hot tandoori roti.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 14: Baingan Bharta -->
+  <div id="modal-baingan" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/baingan_bharta.png" alt="Baingan Bharta">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Dinner</span>
+          <h2 class="modal-title">Baingan Bharta & Bajra</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">15 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">25 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">40 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">4 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('baingan', 'Baingan Bharta & Bajra')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="bai-i1" class="ingredient-checkbox"><label for="bai-i1" class="ingredient-text">1 Large Eggplant (Baingan)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="bai-i2" class="ingredient-checkbox"><label for="bai-i2" class="ingredient-text">1 Onion & 2 Tomatoes (chopped)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="bai-i3" class="ingredient-checkbox"><label for="bai-i3" class="ingredient-text">1/2 cup Green peas & ginger-chili paste</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="bai-i4" class="ingredient-checkbox"><label for="bai-i4" class="ingredient-text">1/2 tsp Turmeric, chili powder, & salt</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="bai-i5" class="ingredient-checkbox"><label for="bai-i5" class="ingredient-text">2 cups Bajra (pearl millet) flour</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="bai-i6" class="ingredient-checkbox"><label for="bai-i6" class="ingredient-text">Ghee for smear</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Slit eggplant, insert garlic cloves, brush with oil, and roast over an open flame until skin is charred and flesh is tender.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Cool, peel off charred skin, and mash roasted pulp thoroughly.</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">Sauté chopped onions, ginger-chili paste, tomatoes, and peas in oil. Add spices and cook until soft.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Stir in mashed eggplant, cook for 5 minutes, finish with coriander.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Bajra Roti: Knead warm water into millet flour, pat flat on a board, cook on a hot tawa. Smear with ghee and serve warm with bharta.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 15: Kadai Mushroom -->
+  <div id="modal-mushroom" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/kadai_mushroom.png" alt="Kadai Mushroom">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Dinner</span>
+          <h2 class="modal-title">Spicy Kadai Mushroom</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">15 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">20 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">35 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">4 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('mushroom', 'Spicy Kadai Mushroom')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="mus-i1" class="ingredient-checkbox"><label for="mus-i1" class="ingredient-text">200g Mushrooms (quartered)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="mus-i2" class="ingredient-checkbox"><label for="mus-i2" class="ingredient-text">1 Bell pepper & 1 Onion (cubed)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="mus-i3" class="ingredient-checkbox"><label for="mus-i3" class="ingredient-text">1 cup Tomato-onion gravy base</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="mus-i4" class="ingredient-checkbox"><label for="mus-i4" class="ingredient-text">1 tbsp Kadai masala powder</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="mus-i5" class="ingredient-checkbox"><label for="mus-i5" class="ingredient-text">Kasuri methi & fresh cream</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="mus-i6" class="ingredient-checkbox"><label for="mus-i6" class="ingredient-text">Whole wheat flour (for Lachha Paratha)</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Dry roast coriander, fennel, and red chilies, then grind to make fresh Kadai Masala.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Sauté cubed bell pepper and onions in hot oil for 2 minutes until crunchy, and set aside.</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">In the same pan, add mushrooms, cook until dry, then add onion-tomato gravy paste and kadai masala.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Fold in sautéed bell peppers and onions. Simmer for 5 minutes. Sprinkle cream and crushed kasuri methi.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Serve hot alongside flaky, multi-layered wheat Lachha Parathas.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 16: Moong Dal Khichdi -->
+  <div id="modal-khichdi" class="modal-overlay">
+    <div class="modal-container">
+      <a href="#" class="close-modal-btn" title="Close details"><i class="fa-solid fa-xmark"></i></a>
+      <div class="modal-hero">
+        <img class="modal-hero-img" src="assets/khichdi_kadhi.png" alt="Moong Dal Khichdi">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-title-card">
+          <span class="modal-category">Dinner</span>
+          <h2 class="modal-title">Moong Dal Khichdi & Kadhi</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-quick-meta">
+          <div class="meta-box"><i class="fa-regular fa-clock"></i><span class="meta-label">Prep Time</span><span class="meta-value">10 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-fire"></i><span class="meta-label">Cook Time</span><span class="meta-value">15 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-hourglass-half"></i><span class="meta-label">Total Time</span><span class="meta-value">25 mins</span></div>
+          <div class="meta-box"><i class="fa-solid fa-pizza-slice"></i><span class="meta-label">Servings</span><span class="meta-value">3 servings</span></div>
+        </div>
+        <div style="text-align: right; margin-bottom: 1.5rem; margin-top: -1rem;">
+          <button class="share-modal-btn" onclick="shareRecipe('khichdi', 'Moong Dal Khichdi')"><i class="fa-solid fa-share-nodes"></i> Share Recipe</button>
+        </div>
+        <div class="modal-grid">
+          <div class="ingredients-column">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-checklist">
+              <li class="ingredient-item"><input type="checkbox" id="khi-i1" class="ingredient-checkbox"><label for="khi-i1" class="ingredient-text">1 cup Basmati Rice & 1/2 cup Moong Dal</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="khi-i2" class="ingredient-checkbox"><label for="khi-i2" class="ingredient-text">1 tbsp Ghee & a pinch of asafoetida</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="khi-i3" class="ingredient-checkbox"><label for="khi-i3" class="ingredient-text">1/2 tsp Cumin & turmeric powder</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="khi-i4" class="ingredient-checkbox"><label for="khi-i4" class="ingredient-text">1 cup Sour curd & 2 tbsp Gram flour (for Kadhi)</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="khi-i5" class="ingredient-checkbox"><label for="khi-i5" class="ingredient-text">Cloves, cinnamon, & green chilies</label></li>
+              <li class="ingredient-item"><input type="checkbox" id="khi-i6" class="ingredient-checkbox"><label for="khi-i6" class="ingredient-text">Papad & pickle (for serving)</label></li>
+            </ul>
+          </div>
+          <div class="process-column">
+            <h3 class="process-title">Preparation Steps</h3>
+            <div class="process-timeline">
+              <div class="step-card"><span class="step-number">1</span><p class="step-desc">Wash rice and dal together. Heat ghee in pressure cooker, add cumin, hing, turmeric, dal, rice, and salt. Sauté for a minute.</p></div>
+              <div class="step-card"><span class="step-number">2</span><p class="step-desc">Add 4.5 cups water and pressure cook for 3 whistles until fully soft and mashed.</p></div>
+              <div class="step-card"><span class="step-number">3</span><p class="step-desc">Kadhi: Whisk sour curd, gram flour (besan), water, turmeric, and ginger-chili paste. Cook on low heat, stirring constantly until it boils.</p></div>
+              <div class="step-card"><span class="step-number">4</span><p class="step-desc">Kadhi Tempering: Heat ghee, crackle mustard, cloves, cinnamon, and curry leaves. Pour immediately into the simmering Kadhi.</p></div>
+              <div class="step-card"><span class="step-number">5</span><p class="step-desc">Serve hot steaming khichdi topped with a big dollop of ghee, along with kadhi, papadum, and pickles.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Website Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3 class="footer-brand-title">RadhaMadhuram</h3>
+        <p class="footer-brand-desc">Spreading purity and divine flavor in every home with handcrafted traditional recipes prepared with love.</p>
+        <div class="social-links">
+          <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-pinterest"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Dishes Catalog</a></li>
+          <li><a href="#">Sanskrit Wisdom</a></li>
+          <li><a href="#">Purity Guidelines</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Categories</h4>
+        <ul class="footer-links">
+          <li><a href="#">Traditional Sweets</a></li>
+          <li><a href="#">Morning Breakfast</a></li>
+          <li><a href="#">Sattvik Lunch</a></li>
+          <li><a href="#">Light Comfort Dinner</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Devotional Motto</h4>
+        <p class="footer-brand-desc" style="font-style: italic;">"अन्नं वै पूर्णब्रह्म रसैः परिपुष्टं तस्य भक्षणेन आनन्दं प्राप्नोति।"</p>
+        <p class="footer-brand-desc" style="font-size: 0.85rem; margin-top: 0.5rem;">Food is the complete representation of the divine creator. It nourishes our body and elevates our consciousness.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 RadhaMadhuram. Handcrafted with devotion. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Popup Container -->
+  <div id="toast" class="toast-container">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toast-text">Link copied to clipboard!</span>
+  </div>
+
+  <!-- Javascript Logic for Theme Switching, Search, and Recipe Sharing -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Theme Switcher Logic
+      const themeToggle = document.getElementById("themeToggle");
+      const currentTheme = localStorage.getItem("radhamadhuram_theme") || "light";
+      
+      document.documentElement.setAttribute("data-theme", currentTheme);
+      updateThemeIcon(currentTheme);
+
+      themeToggle.addEventListener("click", () => {
+        const activeTheme = document.documentElement.getAttribute("data-theme");
+        const newTheme = activeTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("radhamadhuram_theme", newTheme);
+        updateThemeIcon(newTheme);
+      });
+
+      function updateThemeIcon(theme) {
+        const icon = themeToggle.querySelector("i");
+        if (theme === "dark") {
+          icon.className = "fa-solid fa-sun";
+        } else {
+          icon.className = "fa-solid fa-moon";
+        }
+      }
+    });
+
+    // 2. Search Box Filter Logic
+    function filterRecipes() {
+      const query = document.getElementById("searchInput").value.toLowerCase().trim();
+      const cards = document.querySelectorAll(".recipe-card");
+      
+      cards.forEach(card => {
+        const title = card.querySelector(".card-title").textContent.toLowerCase();
+        const desc = card.querySelector(".card-desc").textContent.toLowerCase();
+        
+        if (title.includes(query) || desc.includes(query)) {
+          card.classList.remove("is-hidden");
+        } else {
+          card.classList.add("is-hidden");
+        }
+      });
+    }
+
+    // 3. Web Share API & Clipboard Fallback Logic
+    function shareRecipe(id, name) {
+      // Build a unique anchor URL linking directly to the CSS modal target
+      const shareUrl = window.location.origin + window.location.pathname + '#modal-' + id;
+      
+      if (navigator.share) {
+        navigator.share({
+          title: name + ' - RadhaMadhuram Recipes',
+          text: 'Explore this pure, delicious recipe for ' + name + ' on RadhaMadhuram!',
+          url: shareUrl
+        }).catch(err => console.log('Error sharing:', err));
+      } else {
+        // Clipboard copy fallback
+        navigator.clipboard.writeText(shareUrl).then(() => {
+          showToast('Recipe link copied to clipboard!');
+        }).catch(err => {
+          console.error('Clipboard copy failed:', err);
+          showToast('Failed to copy link.');
+        });
+      }
+    }
+
+    // 4. Custom Toast Notification Trigger
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      const toastText = document.getElementById("toast-text");
+      
+      toastText.textContent = message;
+      toast.classList.add("active");
+      
+      setTimeout(() => {
+        toast.classList.remove("active");
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
